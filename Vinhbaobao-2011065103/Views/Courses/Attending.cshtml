@@ -1,0 +1,33 @@
+﻿@model Vinhbaobao_2011065103.ViewModels.CourseViewModel
+@{
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Attending</h2>
+
+
+<ul class="course">
+    @foreach (var course in Model.UpcommingCourses)
+    {
+        <li>
+            <div class=" date">
+                <div class="month">
+                    @course.DateTime.ToString("MM")
+                </div>
+                <div class="day">
+                    @course.DateTime.ToString("dd")
+                </div>
+            </div>
+            <div class=" details">
+                <div class="lecturer">
+                    @course.Lecturer.Name
+                </div>
+                <div class="category">
+                    @course.Category.Name
+                </div>
+            </div>
+
+        </li>
+    }
+</ul>
